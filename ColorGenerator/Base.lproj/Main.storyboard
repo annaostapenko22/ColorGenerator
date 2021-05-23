@@ -64,7 +64,7 @@
                                         <rect key="frame" x="0.0" y="60" width="374" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9vP-GN-4uK">
-                                                <rect key="frame" x="0.0" y="3" width="58.333333333333336" height="24"/>
+                                                <rect key="frame" x="0.0" y="3" width="56" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="N0o-QL-Unw"/>
                                                 </constraints>
@@ -73,7 +73,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBN-hr-wTs">
-                                                <rect key="frame" x="68.333333333333329" y="5.3333333333333144" width="40" height="19.333333333333332"/>
+                                                <rect key="frame" x="66" y="5.3333333333333144" width="40" height="19.333333333333332"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="PyT-cl-Ffn"/>
                                                 </constraints>
@@ -82,7 +82,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="yGA-fO-JDz">
-                                                <rect key="frame" x="116.33333333333334" y="0.0" width="259.66666666666663" height="31"/>
+                                                <rect key="frame" x="114" y="0.0" width="262" height="31"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <connections>
                                                     <action selector="onGreenValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="TDE-PS-Kwi"/>
@@ -166,7 +166,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LsM-Ed-fAo">
-                                <rect key="frame" x="126.66666666666669" y="691" width="161" height="161"/>
+                                <rect key="frame" x="126.66666666666669" y="508" width="161" height="161"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copy your color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r4R-Nl-fTq">
                                         <rect key="frame" x="0.0" y="0.0" width="161" height="20.333333333333332"/>
@@ -202,12 +202,12 @@
                             <constraint firstItem="YCt-dw-dke" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="62c-yj-J0f"/>
                             <constraint firstItem="YCt-dw-dke" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7kS-ZJ-eoS"/>
                             <constraint firstItem="LsM-Ed-fAo" firstAttribute="centerX" secondItem="YCt-dw-dke" secondAttribute="centerX" id="ERD-KO-d7d"/>
+                            <constraint firstItem="LsM-Ed-fAo" firstAttribute="top" secondItem="YCt-dw-dke" secondAttribute="bottom" constant="20" id="EnH-eL-OIm"/>
                             <constraint firstItem="YCt-dw-dke" firstAttribute="width" secondItem="LsM-Ed-fAo" secondAttribute="height" multiplier="374:161" id="Y6q-X3-2Ac"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YCt-dw-dke" secondAttribute="trailing" constant="20" id="bug-FQ-EbO"/>
                             <constraint firstItem="YCt-dw-dke" firstAttribute="top" secondItem="Ktn-rn-rM2" secondAttribute="bottom" constant="34" id="c7x-Dh-TtM"/>
                             <constraint firstItem="LsM-Ed-fAo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m2q-kN-PPu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ktn-rn-rM2" secondAttribute="trailing" constant="20" id="swO-uk-xL5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LsM-Ed-fAo" secondAttribute="bottom" constant="10" id="vCR-a4-u5R"/>
                             <constraint firstItem="Ktn-rn-rM2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="w73-9n-kEi"/>
                         </constraints>
                     </view>
