@@ -95,6 +95,12 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func onCopyColorClick() {
+        UIPasteboard.general.string = colorToCopy.text
+        let alert = UIAlertController(title: "You have copied the color", message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
 }

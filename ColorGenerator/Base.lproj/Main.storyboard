@@ -165,17 +165,20 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="260" id="ehp-dI-0M9"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LsM-Ed-fAo">
-                                <rect key="frame" x="126.66666666666669" y="508" width="161" height="161"/>
+                            <stackView opaque="NO" contentMode="left" axis="vertical" distribution="equalCentering" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="LsM-Ed-fAo">
+                                <rect key="frame" x="127" y="508" width="160" height="161"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copy your color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r4R-Nl-fTq">
-                                        <rect key="frame" x="0.0" y="0.0" width="161" height="20.333333333333332"/>
+                                        <rect key="frame" x="19.999999999999993" y="0.0" width="120.33333333333331" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F34-bt-sPE">
-                                        <rect key="frame" x="0.0" y="58.333333333333371" width="161" height="32"/>
+                                        <rect key="frame" x="0.0" y="36" width="160" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="029-uW-D00"/>
+                                        </constraints>
                                         <segments>
                                             <segment title="rgba"/>
                                             <segment title="hex"/>
@@ -185,13 +188,36 @@
                                         </connections>
                                     </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3p5-p5-Q2I">
-                                        <rect key="frame" x="0.0" y="127" width="161" height="34"/>
+                                        <rect key="frame" x="64" y="82" width="32" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="yg4-Mc-eBE"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjd-1c-K6u">
+                                        <rect key="frame" x="52.666666666666657" y="131" width="55" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="DND-ws-Crm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="copy">
+                                            <color key="titleShadowColor" systemColor="opaqueSeparatorColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onCopyColorClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="F4K-u0-Vdf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="LsM-Ed-fAo" secondAttribute="height" multiplier="1:1" id="7uh-ld-Yus"/>
+                                    <constraint firstAttribute="width" secondItem="LsM-Ed-fAo" secondAttribute="height" multiplier="160:161" id="Q6W-7t-upl"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -210,6 +236,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ktn-rn-rM2" secondAttribute="trailing" constant="20" id="swO-uk-xL5"/>
                             <constraint firstItem="Ktn-rn-rM2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="w73-9n-kEi"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="alphaSlider" destination="7JN-MU-MuA" id="1lx-d2-1XR"/>
@@ -231,6 +262,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
