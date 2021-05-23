@@ -30,7 +30,9 @@ class ViewController: UIViewController {
         generatedColor.layer.cornerRadius = 10
         generatedColor.layer.borderWidth = 1
         generatedColor.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
         colorToCopy.text = String(colorSegmentControlValue.selectedSegmentIndex)
+        colorToCopy.isUserInteractionEnabled = false
         
         
         redValueLabel.text = String(redSlider.value)
@@ -46,6 +48,10 @@ class ViewController: UIViewController {
     
     private func setGeneratedColor() -> Void {
         generatedColor.backgroundColor = UIColor(red: CGFloat(redSlider.value) / 255, green: CGFloat(greenSlider.value) / 255, blue: CGFloat(blueSlider.value) / 255, alpha: CGFloat(alphaSlider.value))
+    }
+    
+    private func setSliderTintColor (red: Float, green: Float, blue: Float, alpha: Float) -> UIColor {
+        UIColor(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: CGFloat(alpha))
     }
     
     private func getRoundedValueText (colorSlider: UISlider) -> String {
@@ -69,23 +75,30 @@ class ViewController: UIViewController {
     
     @IBAction func onRedValueChanged(_ sender: UISlider) {
         redValueLabel.text = getRoundedValueText(colorSlider: redSlider)
+        redSlider.tintColor = setSliderTintColor(red: redSlider.value, green: 0, blue: 0, alpha: alphaSlider.value)
+        alphaSlider.tintColor = setSliderTintColor(red: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
         setGeneratedColor()
         calculateSegmentColorValue()
     }
     
     @IBAction func onGreenValueChanged(_ sender: UISlider) {
         greenValueLabel.text = getRoundedValueText(colorSlider: greenSlider)
+        greenSlider.tintColor = setSliderTintColor(red: 0, green: greenSlider.value, blue: 0, alpha: alphaSlider.value)
+        alphaSlider.tintColor = setSliderTintColor(red: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
         setGeneratedColor()
         calculateSegmentColorValue()
     }
     @IBAction func onBlueValueChanged(_ sender: UISlider) {
         blueValueLabel.text = getRoundedValueText(colorSlider: blueSlider)
+        blueSlider.tintColor = setSliderTintColor(red: 0, green: 0, blue: blueSlider.value, alpha: alphaSlider.value)
+        alphaSlider.tintColor = setSliderTintColor(red: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
         setGeneratedColor()
         calculateSegmentColorValue()
     }
     
     @IBAction func onAlphaValueChanged(_ sender: UISlider) {
         alphaValueLabel.text = getRoundedValueText(colorSlider: alphaSlider)
+        alphaSlider.tintColor = setSliderTintColor(red: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
         setGeneratedColor()
         calculateSegmentColorValue()
     }
